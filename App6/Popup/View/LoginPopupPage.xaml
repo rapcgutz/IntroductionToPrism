@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"                 
+                 prism:ViewModelLocator.AutowireViewModel="True"                 
+             x:Class="App6.Popup.View.LoginPopupPage">
+    <pages:PopupPage.Content>
+        <Grid  VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"
+               WidthRequest="200" HeightRequest="200" Padding="30" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Entry Grid.Row="0" Text="{Binding ClientName}" Placeholder="Name" />
+            <Entry  Grid.Row="1" Text="{Binding Password}" IsPassword="True" Placeholder="Password" />
+            <Button  Grid.Row="2" 
+                     VerticalOptions="CenterAndExpand" 
+                     HorizontalOptions="FillAndExpand"
+                     Text="{Binding GotoLoginText}" 
+                     Command="{Binding GotoDashboardPageCommand}" 
+                     TextColor="White"
+                     BackgroundColor="#3b5998"/>
+        </Grid>
+    </pages:PopupPage.Content>
+</pages:PopupPage>
